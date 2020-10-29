@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Pedido } from '../model/Pedido/Pedido';
+import { PedidoService } from '../model/Pedido/pedido_service';
 
 @Component({
   selector: 'app-pedido-emp',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedidoEmpComponent implements OnInit {
 
-  constructor() { }
+  pedidos: Pedido[];
+
+  constructor(private pedidoService: PedidoService) { }
 
   ngOnInit(): void {
+    this.setPedidos();
+  }
+
+  setPedidos(): void {
+    this.pedidos = this.pedidoService.getListaProductos();
   }
 
 }

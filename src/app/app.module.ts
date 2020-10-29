@@ -13,6 +13,7 @@ import { DireccionClienteComponent } from './direccion-cliente/direccion-cliente
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductoService } from './model/Productos/Productos-service';
+import { PedidoService } from './model/Pedido/pedido_service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ProductoService } from './model/Productos/Productos-service';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [ProductoService],
+  providers: [ProductoService, PedidoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,20 @@
-<p>pedido-emp works!</p>
+<h2>
+    Listado de pedidos
+</h2>
+
+<div *ngIf=" pedidos == null ">No hay pedidos por el momento</div>
+<div>
+    <article *ngFor="let pedido of pedidos">
+        
+        <span>{{pedido.folio}}</span><br>
+        <span>{{pedido.estatus}}</span><br>
+        <span>{{pedido.id_cliente_Pedido}}</span><br>
+        <span>{{pedido.precio}}</span><br>
+
+        <span *ngFor="let producto of pedido.ListaProductos">
+            <span>{{producto.nombre}}</span><br>
+            <span>{{producto.precio}}</span><br>
+        </span><br>
+
+    </article>
+</div>
