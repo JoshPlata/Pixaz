@@ -1,0 +1,23 @@
+<h2>
+    Agregar un producto
+</h2>
+
+<form [formGroup]="prodEmpForm" (ngSubmit)="save($event)">
+    <label>Nombre</label>
+    <input type="text" formControlName="nombre" placeholder="Nombre"/>
+    <label>Precio</label>
+    <input type="text" formControlName="precio" placeholder="Precio"/>
+    <button type="submit">Guardar</button>
+</form>
+
+<h2>
+    Listado de productos
+</h2>
+<div *ngIf=" productos == null ">No hay productos por el momento</div>
+<div>
+    <article *ngFor="let producto of productos">
+        <span>{{producto.id_producto}}</span><br>
+        <span>{{producto.nombre}}</span><br>
+        <span>{{producto.precio | number}}</span><br>
+    </article>
+</div>
